@@ -1,0 +1,15 @@
+public class TransactionModel {
+    public Guid Id { get; set; }
+    public Guid Account { get; set; }  // stesso guid dell'account
+    public Guid Mittente { get; set; } // prendere l'id dalla classe AccountModel
+    public Guid Destinatario { get; set; }
+    public DateTime Timestamp { get; set; } = DateTime.UtcNow;
+
+    public TransactionModel (Guid id, Guid account, Guid destinatario, DateTime timestamp)
+    {
+        Id = id;
+        Account = account;
+        Destinatario = destinatario;
+        Timestamp = timestamp;
+    }
+}
