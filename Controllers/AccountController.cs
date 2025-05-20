@@ -3,13 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace MyApp.Namespace
 {
     public class AccountController : Controller
-    {
-        private readonly _conto;
-
-        public Class AccountController()
-        {
-            _conto = ContoService;
-        }
+    {     
         // GET: AccountController
         // Riepilogo conti
         public ActionResult Index()

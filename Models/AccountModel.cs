@@ -16,4 +16,7 @@ public class AccountModel {
         PasswordHash = passwordHash; // salatura utilizzata per fare l'hash
         Conti = conti;
     }
+
+    
+
 }
