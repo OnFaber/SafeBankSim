@@ -1,14 +1,22 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace MyApp.Namespace
+namespace SafeBankSim.Controllers
 {
     public class AccountController : Controller
-    {     
+    {
+        private readonly UserService _userService;
+
+        public AccountController(UserService userService)
+        {
+            _userService = userService;
+        }
+        
         // GET: AccountController
         // Riepilogo conti
-        public ActionResult Index()
+        public ActionResult Index(string id)
         {
-            return View();
+            var utenti = _userService.GetAll();
+            return View(utenti);
         }
         // aggiungere conto
         // param = id

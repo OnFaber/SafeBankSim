@@ -5,9 +5,9 @@ public class AccountModel {
     public string Email { get; set; }
     public string Password { get; set; }
     public string PasswordHash { get; set; }
-    public List<Conto> Conti { get; set; }
-    
-    public AccountModel(Guid id, string nome, string cognome, string email, string password, string passwordHash, List<Conto> conti) {
+    public List<ContoModel> Conti { get; set; }
+
+    public AccountModel(Guid id, string nome, string cognome, string email, string password, string passwordHash, List<ContoModel> conti) {
         Id = id;
         Nome = nome;
         Cognome = cognome;
@@ -15,8 +15,5 @@ public class AccountModel {
         Password = password; // l'hash
         PasswordHash = passwordHash; // salatura utilizzata per fare l'hash
         Conti = conti;
-    }
-
-    
-
+    }    
 }

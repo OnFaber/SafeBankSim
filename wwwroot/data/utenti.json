@@ -1,0 +1,25 @@
+[
+    {
+        "Id": "64a2b15a-6b1c-4bc1-9896-f7d8c78bb2cc",
+        "Nome": "Mario",
+        "Cognome": "Rossi",
+        "Email": "mario.rossi@example.com",
+        "Password": "k/YMaBgfIoxPBWuohAbiMb74hztDnr1dZFl3uGzYDqA=",
+        "PasswordHash": "b05a6a16-4882-4c0d-9951-8c3eedaec10f"
+    },
+    {
+        "Id": "64a2b15a-6b1c-4bc1-9896-f7d8c78bb2cd",
+        "Nome": "Luigi",
+        "Cognome": "Bianchi",
+        "Email": "luigi.bianchi@example.com",
+        "Password": "123456",
+        "Passwordhash": "",
+        "Conti": [
+            {
+                "id": "e12d1b9d-4f35-4f65-b46a-1d18a5035df5",
+                "saldo": 2500.00,
+                "stato": "Attivo"
+            }
+        ]
+    }
+]

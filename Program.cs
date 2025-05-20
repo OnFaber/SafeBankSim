@@ -1,13 +1,18 @@
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+// builder.Services.AddScoped<AccountService>();
+builder.Services.AddScoped<AuthService>();
+builder.Services.AddSingleton<UserService>();
 
 var app = builder.Build();
-builder.Services.AddScoped<AccountService>();
-builder.Services.AddScoped<AuthService>();
-builder.Services.AddScoped<UserService>();
 
+var logger = app.Services.GetRequiredService<ILogger<Program>>();
+logger.LogInformation("Applicazione avviata");
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
