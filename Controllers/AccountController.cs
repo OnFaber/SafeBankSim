@@ -13,10 +13,17 @@ namespace SafeBankSim.Controllers
         
         // GET: AccountController
         // Riepilogo conti
-        public ActionResult Index(string id)
+        public ActionResult Index(string email)
         {
-            var utenti = _userService.GetAll();
-            return View(utenti);
+            var UserEmail = HttpContext.Session.GetString("UserEmail");            
+            if (string.IsNullOrEmpty(UserEmail))
+            {
+                return RedirectToAction("Index", "Auth");
+            }
+            var utente = _userService.FindByEmail(UserEmail);
+            var conto = utente?.Conto;
+            
+            return View(conto);
         }
         // aggiungere conto
         // param = id

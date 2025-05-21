@@ -1,25 +1,48 @@
 [
-    {
-        "Id": "64a2b15a-6b1c-4bc1-9896-f7d8c78bb2cc",
-        "Nome": "Mario",
-        "Cognome": "Rossi",
-        "Email": "mario.rossi@example.com",
-        "Password": "k/YMaBgfIoxPBWuohAbiMb74hztDnr1dZFl3uGzYDqA=",
-        "PasswordHash": "b05a6a16-4882-4c0d-9951-8c3eedaec10f"
-    },
-    {
-        "Id": "64a2b15a-6b1c-4bc1-9896-f7d8c78bb2cd",
-        "Nome": "Luigi",
-        "Cognome": "Bianchi",
-        "Email": "luigi.bianchi@example.com",
-        "Password": "123456",
-        "Passwordhash": "",
-        "Conti": [
-            {
-                "id": "e12d1b9d-4f35-4f65-b46a-1d18a5035df5",
-                "saldo": 2500.00,
-                "stato": "Attivo"
-            }
-        ]
+  {
+    "Id": "64a2b15a-6b1c-4bc1-9896-f7d8c78bb2cc",
+    "Nome": "Mario",
+    "Cognome": "Rossi",
+    "Email": "mario.rossi@example.com",
+    "PlainPassword": null,
+    "PasswordHash": "k/YMaBgfIoxPBWuohAbiMb74hztDnr1dZFl3uGzYDqA=",
+    "Salt": "b05a6a16-4882-4c0d-9951-8c3eedaec10f",
+    "Conto": null
+  },
+  {
+    "Id": "64a2b15a-6b1c-4bc1-9896-f7d8c78bb2cd",
+    "Nome": "Luigi",
+    "Cognome": "Bianchi",
+    "Email": "luigi.bianchi@example.com",
+    "PlainPassword": null,
+    "PasswordHash": "123456",
+    "Salt": "",
+    "Conto": {
+      "Id": "00000000-0000-0000-0000-000000000000",
+      "Proprietario": "00000000-0000-0000-0000-000000000000",
+      "Stato": 0,
+      "Transazioni": [],
+      "Saldo": 0
     }
+  },
+  {
+    "Id": "d6254318-3890-4355-a57f-6eec0242bb29",
+    "Nome": "fabrizio",
+    "Cognome": "boezi",
+    "Email": "fabrizio.boezi@outlook.it",
+    "PlainPassword": null,
+    "PasswordHash": "UZi62/wqc4TAFhMaVsYRvIqczdF2lP8/5t\u002B79/1cHj8=",
+    "Salt": "4da5652f-4117-497a-a6f3-cfcdc9d8173a",
+    "Conto": null
+  },
+  {
+    "Id": "b8f4e5f7-2f6c-45de-a29b-fd2f0c79776f",
+    "Nome": "mario",
+    "Cognome": "rossi",
+    "Email": "mario.rossi@gmail.com",
+    "PlainPassword": null,
+    "PasswordHash": "Q6kElQSIbyTt6NMrwuDcbdUiz6RbcBFluMsLYlgfDo8=",
+    "Salt": "f9d60df5-6007-4691-af03-bda658a4ee39",
+    "Conto": null
+  }
 ]

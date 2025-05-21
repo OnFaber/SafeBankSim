@@ -1,21 +1,27 @@
 @model LoginViewModel
+@{
+  Layout = "_AuthLayout";
+  }
 
-<h2>Login</h2>
-
-<form method="post">
+<div class="form__box">
+  <p class="capitalize">sign in</p>
+  <form id="signInForm" name="signInForm" method="POST">
   <label>Email:</label>
   <input type="email" name="Email" required />
   <br />
 
   <label>Password:</label>
   <input type="password" name="Password" required />
-  <br />
-
-  <button type="submit">Login</button>
-  <p>non sei registrato? <a asp-controller="Auth" asp-action="Register">registrati</a></p>
+  <input id="SignInForm" name="submit" type="submit"></input>
+  
+      <ul>
+        <li>dont have an account? <a class="capitalize"  asp-controller="Auth" asp-action="Register">Register</a></li>
+      </ul>
 </form>
 
 @if (!string.IsNullOrEmpty(ViewBag.Error))
   {
   <p style="color:red;">@ViewBag.Error</p>
   }
+  <script src="~/js/sign-in-form.js"></script>
+</div>

@@ -1,5 +1,25 @@
-< form >
-    < input name = "" type = "text" value = "" />
-    < input name = "" type = "text" value = "" />
-    < input name = "" type = "text" value = "" />
-</ form >
+@model AccountModel
+@{
+  Layout = "_AuthLayout";
+  }
+
+<div class="form__box form__box--signup">
+<form asp-action="Register" name="signUpForm" method="post">
+  <input  placeholder="Nome"  asp-for="Nome" />
+  <input placeholder="Cognome" asp-for="Cognome" />
+  <input placeholder="Email"  asp-for="Email" type="email" />
+  <input placeholder="Password"  asp-for="PlainPassword" type="password" />
+  
+        <input
+            id="register-button"
+            name=""
+            type="submit"
+            value="Registrati"
+            class="capitalize"
+            />
+</form>
+  <ul>
+    <li>Already have an account? <a class="capitalize"  asp-controller="Auth" asp-action="Index">sign in</a></li>
+  </ul>
+</div>
+<script type="module" src="~/js/sign-up-form.js"></script>

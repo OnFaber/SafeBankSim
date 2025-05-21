@@ -1,25 +1,43 @@
-@model List<AccountModel>
+@model ContoModel
 
-  <h1>Lista Utenti</h1>
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <title>Panoramica Conto Corrente</title>
+    </head>
+    <body>
+        <div class="container">
 
-  <table class= "table" >
-    <thead>
-      <tr>
-        <th> Nome </th>
-        <th> Cognome </th>
-        <th> Email </th>
-        <th> Numero Conti </th>
-      </tr>
-    </thead>
-    <tbdy>
-      @foreach(var utente in Model)
-      {
-      <tr>
-        <td> @utente.Nome </td>
-        <td> @utente.Cognome </td>
-        <td> @utente.Email </td>
-        <td>@(utente.Conti?.Count ?? 0) </td>
-      </tr>
-      }
-</tbody>
-</table>
+            <div class="card">
+                <h2>Saldo Attuale</h2>
+                <p><strong>€ @Model.Saldo.ToString("N2")</strong></p> 
+            </div>
+
+            <div class="card">
+                <h2>Stato della Carta</h2>
+                <p>Stato: <span class="status-attiva">Attiva</span></p>
+            </div>
+
+            <div class="card">
+
+
+                <h2>Storico Transazioni</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Descrizione</th>
+                            <th>Importo</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+ 
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </body>
+    </html>
