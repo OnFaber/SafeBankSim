@@ -8,6 +8,7 @@ public class TransactionModel
     [DataType(DataType.Date)]
     public DateTime Timestamp { get; set; }
 
+    public TransactionModel() { }
     public TransactionModel(Guid id, ContoModel mittente, ContoModel destinatario)
     {
         Id = id;
