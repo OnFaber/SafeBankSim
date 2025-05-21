@@ -22,23 +22,24 @@ namespace MyApp.Namespace
         }
 
         [HttpPost]
-        public IActionResult Index(LoginViewModel model)
+        public IActionResult Index(string email, string password)
         {
-            var user = _userService.FindByEmail(model.Email);
-            if (user == null || !_authService.VerifyPassword(model.Password, user.Password, user.PasswordHash))
+            var user = _userService.FindByEmail(email);
+            if (user == null || !_authService.VerifyPassword(password, user.Password, user.salt))
             {
-                _logger.LogWarning("Login fallito per email: {Email}. Utente trovato? {UserFound}", model.Email, user != null);
+                _logger.LogWarning("Login fallito per email: {Email}. Utente trovato? {UserFound}", email, user != null);
                 ViewBag.Error = "credenziali errate";
 
 
                 return View();
             }
             
-            _logger.LogInformation("Login riuscito per email: {Email}", model.Email);
+            _logger.LogInformation("Login riuscito per email: {Email}", email);
             return RedirectToAction("Index", "Account");
         }
 
         public IActionResult Register(){
+            
             return View();
         }
     }
